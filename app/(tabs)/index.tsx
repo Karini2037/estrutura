@@ -1,32 +1,18 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text } from "react-native";
 
-
-interface botaoProps{
-    entrar: string;
-    nome: string;
-}
-class App extends Component<botaoProps>  {
-
-
-    constructor(props){
-        super(props);
-        this.state = { //declarando o estado do botão e chama o texto
-            nome: 'Karini'
-        };
-        this.entrar = this.entrar.bind(this);//bind deixa a função acessível para todas as propriedades
-    }
-
-    entar(nome){
-        this.setState({ // seta o botão para mudança
-            nome:nome
-        })
-    }
+class App extends Component {
     render() {
-        return(
-            <View style={{marginTop: 100}}>
-                 <Button title="Entrar" onPress={() => this.entrar('Parabéns você consegui fazer um botão funcional')}/>
-                <Text style={{fontSize: 23, color: 'red', textAlign: 'center'}}>{this.state.nome}</Text>
+        return (
+            <View style={{
+                flex: 1,
+                flexDirection: 'row',
+                alignItems: 'center',
+                backgroundColor: '#222'
+            }}>
+                <View style={{ width: 50, height: 50, backgroundColor: 'green' }}></View>
+                <View style={{ width: 50, height: 50, backgroundColor: 'red' }}></View>
+                <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }}></View>
             </View>
         );
     }
